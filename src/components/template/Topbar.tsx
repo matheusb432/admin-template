@@ -1,3 +1,5 @@
+import useAppData from '../../data/hook/useAppData';
+import ButtonTheme from './ButtonTheme';
 import Title from './Title';
 
 interface TopbarProps {
@@ -6,9 +8,14 @@ interface TopbarProps {
 }
 
 export default function Topbar(props: TopbarProps) {
+  const { theme, toggleTheme } = useAppData();
+
   return (
-    <aside>
+    <div className={`flex`}>
       <Title title={props.title} subtitle={props.subtitle} />
-    </aside>
+      <div className={`flex flex-grow justify-end`}>
+        <ButtonTheme theme={theme!} toggleTheme={toggleTheme!} />
+      </div>
+    </div>
   );
 }

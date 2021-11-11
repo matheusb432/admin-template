@@ -1,4 +1,4 @@
-import { IconHome, IconCog, IconBell, IconNews, IconLogout } from '../icons';
+import { IconHome, IconCog, IconBell, IconNews, IconLogout, IconLogin } from '../icons';
 import Logo from './Logo';
 import SidebarItem from './SidebarItem';
 
@@ -6,8 +6,12 @@ interface SidebarProps {}
 
 export default function Sidebar(props: SidebarProps) {
   return (
-    // <aside className='flex items-stretch p-4 bg-gradient-to-r from-yellow-700  to-purple-500'>
-    <aside className='flex flex-col'>
+    <aside
+      className='
+    flex flex-col
+    bg-gray-200 text-gray-700
+    dark:bg-gray-900 
+    '>
       <div
         className={`
         flex flex-col items-center
@@ -23,10 +27,14 @@ export default function Sidebar(props: SidebarProps) {
       </ul>
 
       <ul>
+        <SidebarItem url='/auth' text='Login' icon={IconLogin} />
         <SidebarItem
           text='Logout'
           icon={IconLogout}
-          className='text-red-600 hover:bg-red-400 hover:text-white'
+          className={`
+          text-red-600 dark:text-red-400 
+          hover:bg-red-400 dark:hover:text-white
+          hover:text-white`}
           onClick={() => console.log('logout')}
         />
       </ul>
