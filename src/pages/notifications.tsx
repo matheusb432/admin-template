@@ -4,7 +4,7 @@ import type { NextPage } from 'next';
 const Notifications: NextPage = () => {
   return (
     <Layout title='Notifications' subtitle='notif - Building an admin template!'>
-      <h1>Sus</h1>
+      <h1>Notification Page Content</h1>
     </Layout>
   );
 };

@@ -9,7 +9,6 @@ interface SidebarItemProps {
   onClick?: (e: any) => void;
 }
 
-// ? using object destructuring in props
 export default function SidebarItem({
   text,
   icon,

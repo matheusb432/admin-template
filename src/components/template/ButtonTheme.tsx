@@ -5,7 +5,7 @@ interface ButtonThemeProps {
   toggleTheme: () => void;
 }
 
-// ? using object destructuring in props
+// ? using object destructuring as props
 export default function ButtonTheme({ theme, toggleTheme }: ButtonThemeProps) {
   return theme === 'dark' ? (
     <div

@@ -9,7 +9,6 @@ interface AuthInputProps {
   onChange?: (newValue: any) => void;
 }
 
-// export default function AuthInput(props: AuthInputProps) {
 export default function AuthInput({
   label,
   value,
@@ -18,8 +17,6 @@ export default function AuthInput({
   shouldRender,
   onChange,
 }: AuthInputProps) {
-  //   const { label, value, type, required, shouldRender, onChange } = props;
-
   const getInputId = (id: string) => `inputAuth${id}`;
 
   const renderRequiredSpan = () => <span className='text-red-500 font-bold'>*</span>;
@@ -29,7 +26,6 @@ export default function AuthInput({
       <label className={`mb-2`} htmlFor={inputId}>
         {label} {required ? renderRequiredSpan() : false}
       </label>
-      {/* // ? The safe navigation operator (?.) can be used on methods like this */}
       <input
         className={`
           px-4 py-3 rounded-lg bg-gray-200
@@ -48,21 +44,5 @@ export default function AuthInput({
 
   const inputId = getInputId(label);
 
-  return (
-    <>{shouldRender == null || shouldRender ? renderAuthInput() : false}</>
-    // <div className='flex flex-col mt-1'>
-    //   <label className={`mb-3`} htmlFor={inputId}>
-    //     {label} {required ? renderRequiredSpan() : false}
-    //   </label>
-    //   {/* // ? The safe navigation operator (?.) can be used on methods like this */}
-    //   <input
-    //     className={`mb-4 p-2 text-xl`}
-    //     type={type ?? 'text'}
-    //     id={inputId}
-    //     value={value}
-    //     required={required ?? false}
-    //     onChange={(e) => onChange?.(e.target.value)}
-    //   />
-    // </div>
-  );
+  return <>{shouldRender == null || shouldRender ? renderAuthInput() : false}</>;
 }

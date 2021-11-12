@@ -1,3 +1,4 @@
+import useAuth from '../../data/hook/useAuth';
 import { IconHome, IconCog, IconBell, IconNews, IconLogout, IconLogin } from '../icons';
 import Logo from './Logo';
 import SidebarItem from './SidebarItem';
@@ -5,6 +6,8 @@ import SidebarItem from './SidebarItem';
 interface SidebarProps {}
 
 export default function Sidebar(props: SidebarProps) {
+  const { logout } = useAuth();
+
   return (
     <aside
       className='
@@ -35,7 +38,7 @@ export default function Sidebar(props: SidebarProps) {
           text-red-600 dark:text-red-400 
           hover:bg-red-400 dark:hover:text-white
           hover:text-white`}
-          onClick={() => console.log('logout')}
+          onClick={logout}
         />
       </ul>
     </aside>

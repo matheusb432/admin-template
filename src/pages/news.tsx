@@ -4,7 +4,7 @@ import type { NextPage } from 'next';
 const News: NextPage = () => {
   return (
     <Layout title='News' subtitle='news - Building an admin template!'>
-      <h3>content wow</h3>
+      <h3>News Content</h3>
     </Layout>
   );
 };
